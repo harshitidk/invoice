@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   },
   basePath: '/invoice',
   assetPrefix: '/invoice/',
+  trailingSlash: true,
 };
 
 export default nextConfig;
