@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Japanese Garden Palette */
+  --color-sage: #a8b5a0;
+  --color-sage-light: #c5cfc0;
+  --color-sage-pale: #e8ece5;
+  --color-sage-wash: #f2f4f0;
+  --color-teal: #2a6f6a;
+  --color-teal-dark: #1e524e;
+  --color-teal-light: #3a8a84;
+  --color-navy: #2c3e50;
+  --color-navy-light: #3d5166;
+  --color-navy-muted: #5a6f7f;
+  --color-orange: #d4845a;
+  --color-orange-light: #e0a07a;
+
+  /* Neutrals */
+  --color-bg: #f7f6f3;
+  --color-bg-warm: #f3f1ec;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fafaf7;
+  --color-border: #e4e1da;
+  --color-border-light: #eceae4;
+  --color-text: #2c3e50;
+  --color-text-secondary: #5a6f7f;
+  --color-text-muted: #8e9eab;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  /* Shadows — very subtle */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Seigaiha wave pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%232a6f6a' stroke-width='0.8'%3E%3Cpath d='M0 40 A20 20 0 0 1 20 20 A20 20 0 0 1 40 40 A20 20 0 0 1 20 60 A20 20 0 0 1 0 40z'/%3E%3Cpath d='M40 40 A20 20 0 0 1 60 20 A20 20 0 0 1 80 40 A20 20 0 0 1 60 60 A20 20 0 0 1 40 40z'/%3E%3Cpath d='M20 0 A20 20 0 0 1 40 -20 A20 20 0 0 1 60 0 A20 20 0 0 1 40 20 A20 20 0 0 1 20 0z'/%3E%3Cpath d='M20 80 A20 20 0 0 1 40 60 A20 20 0 0 1 60 80 A20 20 0 0 1 40 100 A20 20 0 0 1 20 80z'/%3E%3Cpath d='M-20 0 A20 20 0 0 1 0 -20 A20 20 0 0 1 20 0 A20 20 0 0 1 0 20 A20 20 0 0 1 -20 0z'/%3E%3Cpath d='M60 0 A20 20 0 0 1 80 -20 A20 20 0 0 1 100 0 A20 20 0 0 1 80 20 A20 20 0 0 1 60 0z'/%3E%3Cpath d='M-20 80 A20 20 0 0 1 0 60 A20 20 0 0 1 20 80 A20 20 0 0 1 0 100 A20 20 0 0 1 -20 80z'/%3E%3Cpath d='M60 80 A20 20 0 0 1 80 60 A20 20 0 0 1 100 80 A20 20 0 0 1 80 100 A20 20 0 0 1 60 80z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* Paper texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Selection */
+::selection {
+  background: rgba(42, 111, 106, 0.12);
+  color: var(--color-teal-dark);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.delay-1 { animation-delay: 80ms; }
+.delay-2 { animation-delay: 160ms; }
+.delay-3 { animation-delay: 240ms; }
+.delay-4 { animation-delay: 320ms; }
