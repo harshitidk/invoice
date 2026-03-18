@@ -68,7 +68,7 @@ export default function LandingPage() {
             className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight mb-5"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text)' }}
           >
-            Create a simple invoice for someone who still owes you.
+            Create an invoice for that friend who “forgot.”
           </h1>
 
           <p
@@ -77,7 +77,7 @@ export default function LandingPage() {
             }`}
             style={{ color: 'var(--color-text-secondary)', animationFillMode: 'both' }}
           >
-            Add the details, write your own note, and download a clean PDF you can actually send.
+            For splits, IOUs, and messages that ended with “I’ll send it.” Add the details, write your note, and make it official.
           </p>
 
           <div
@@ -120,7 +120,7 @@ export default function LandingPage() {
           className={`mt-16 text-xs ${mounted ? 'animate-in delay-3' : 'opacity-0'}`}
           style={{ color: 'var(--color-text-muted)', animationFillMode: 'both' }}
         >
-          Sometimes a reminder helps.
+          Because reminders clearly aren’t working.
         </p>
       </main>
     </div>
